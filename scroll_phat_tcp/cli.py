@@ -4,7 +4,6 @@ import sys
 import click
 import logging
 import coloredlogs
-from colorama import init, Fore
 import socket
 import time
 import math
