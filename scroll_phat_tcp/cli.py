@@ -36,8 +36,8 @@ def cli():
         data = conn.recv(BUFFER_SIZE)
         if not data: break
         print "received data:", data
-            if data == 'plasma':
-                plasma()
+        if data == 'plasma':
+            plasma()
             
 
     conn.close()
