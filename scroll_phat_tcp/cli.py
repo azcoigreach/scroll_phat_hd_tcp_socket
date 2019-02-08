@@ -38,6 +38,7 @@ def cli():
         print "received data:", data
             if data == 'plasma':
                 plasma()
+            
 
     conn.close()
 
