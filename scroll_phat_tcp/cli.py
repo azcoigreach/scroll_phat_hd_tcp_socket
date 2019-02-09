@@ -37,7 +37,9 @@ def cli():
         if not data: break
         print "received data:", data
         if data == 'plasma':
-            plasma
+            plasma()
+        else:
+            pass
             
 
     conn.close()
