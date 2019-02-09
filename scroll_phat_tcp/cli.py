@@ -18,6 +18,24 @@ class Context(object):
 
 pass_context = click.make_pass_decorator(Context, ensure=True)
 
+
+def plasma():
+        i = 0
+
+        while True:
+            i += 2
+            s = math.sin(i / 50.0) * 2.0 + 6.0
+
+            for x in range(0, 17):
+                for y in range(0, 7):
+                    v = 0.3 + (0.3 * math.sin((x * s) + i / 4.0) * math.cos((y * s) + i / 4.0))
+
+                    scrollphathd.pixel(x, y, v)
+
+            time.sleep(0.01)
+            scrollphathd.show()
+
+
 @click.command()
 def cli():
     """TCP Socket"""
@@ -44,18 +62,4 @@ def cli():
 
     conn.close()
 
-    def plasma():
-        i = 0
-
-        while True:
-            i += 2
-            s = math.sin(i / 50.0) * 2.0 + 6.0
-
-            for x in range(0, 17):
-                for y in range(0, 7):
-                    v = 0.3 + (0.3 * math.sin((x * s) + i / 4.0) * math.cos((y * s) + i / 4.0))
-
-                    scrollphathd.pixel(x, y, v)
-
-            time.sleep(0.01)
-            scrollphathd.show()
+    
