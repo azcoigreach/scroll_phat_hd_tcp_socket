@@ -47,7 +47,7 @@ def cli():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind((TCP_IP, TCP_PORT))
     s.listen(1)
-
+    logger.debug('Socket open.')
     conn, addr = s.accept()
     logger.info('Connection address: %s', addr)
     while 1:
@@ -59,7 +59,7 @@ def cli():
         else:
             pass
             
-
+    logger.debug('Socket closed.')
     conn.close()
 
     
