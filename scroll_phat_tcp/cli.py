@@ -33,8 +33,8 @@ def plasma():
         scrollphathd.show()
 
 def clock():
-    DISPLAY_BAR = False
-    BRIGHTNESS = 0.3
+    DISPLAY_BAR = True
+    BRIGHTNESS = 0.15
 
     while True:
         scrollphathd.clear()
@@ -81,11 +81,15 @@ def cli():
     logger.info('Connection address: %s', addr)
     while 1:
         data = conn.recv(BUFFER_SIZE)
-        if not data: break
+        if not data:
+            break
         logger.info('received data: %s', data)
-        if data == 'plasma': plasma()
-        if clock == 'clock': clock()
-        else: pass
+        if data == 'plasma':
+            plasma()
+        if clock == 'clock':
+            clock()
+        else:
+            pass
             
     logger.debug('Socket closed.')
     conn.close()
