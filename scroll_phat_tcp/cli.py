@@ -49,11 +49,11 @@ def cli():
     s.listen(1)
 
     conn, addr = s.accept()
-    logger.INFO('Connection address:', addr)
+    logger.info('Connection address:', addr)
     while 1:
         data = conn.recv(BUFFER_SIZE)
         if not data: break
-        logger.INFO("received data:", data)
+        logger.info("received data:", data)
         if data == 'plasma':
             plasma()
         else:
