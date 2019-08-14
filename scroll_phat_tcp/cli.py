@@ -61,8 +61,8 @@ def clock():
         )
         if int(time.time()) % 2 == 0:
             scrollphathd.clear_rect(8, 0, 1, 5)
-        scrollphathd.show()
         time.sleep(0.1)
+        scrollphathd.show()
 
 
 @click.command()
